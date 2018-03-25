@@ -1,5 +1,6 @@
 html{
-  background-color:#000;
+  background-color:#000000
+;
   overflow-x:hidden;
   padding-bottom:142px;
 }
@@ -73,7 +74,7 @@ background-color:yellow;
   perspective: 2000px;
   transition: all 1s ease-in-out;
   animation: roll;
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-iteration-count:infinite;
 }
 
@@ -84,30 +85,63 @@ background-color:yellow;
   height:100%; 
 }
 #face1{
-  background-color:#e91e63;
+  background-color:#F48FB1;
   
 }
 #face2{
-  background-color:#eeff41;
+  background-color:#7B1FA2;
   transform:rotateY(90deg) rotateX(90deg)  translateZ(-100px) translateX(-100px);
 
   
 }
 #face3{
-  background-color:#76ff03;
+  background-color:#4FC3F7;
   transform: rotateY(90deg) translateX(-100px) translateZ(100px);
 }
 
 #face4{
-  background-color: #00b8d4;
+  background-color: #D4E157;
   transform: rotateZ(90deg) rotateX(90deg) translateZ(-100px) translateY(100px);
 }
 #face5{
-  background-color:#ea80fc;
+  background-color:#F4511E;
   transform: translateZ(200px);
   
 }
 #face6{
-  background-color:#1a237e;
+  background-color:#F50057;
   transform:rotateY(90deg) rotateX(90deg)  translateZ(100px) translateX(-100px);
+}
+
+@keyframes spin {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.earth {
+  margin-top: 30%;
+  margin-left:60%;
+  width: 300px;
+  height: 300px;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 20px #000 inset, 0 0 20px 2px #000;
+}
+
+.earth:after {
+  position: absolute;
+  content: "";
+  box-shadow: -20px -20px 50px 2px #000 inset;
+  border-radius: 50%;
+}
+
+.earth > div {
+  width: 200%;
+  height: 100%;
+  animation: spin 30s linear alternate infinite;
+  background: url(img.jpg);
+  
+  background-size: cover;
 }
